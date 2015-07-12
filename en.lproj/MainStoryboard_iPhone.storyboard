@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="J3a-lz-Vb9">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="eB5-ee-SIc">
+            <objects>
+                <viewController id="KH0-s5-SQ6" customClass="WTHomeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5ha-L6-i4X">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <containerView tag="100" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="cIw-vi-cg2">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="JAU-wp-K6E" appends="YES" id="iKj-RT-kI8"/>
+                                    <segue destination="2" kind="embed" identifier="HomeToJump" id="wVL-gk-xa3"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="哇陶创意工坊" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rx7-dT-RPn">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="iWl-ya-sqj"/>
+                                    <constraint firstAttribute="height" constant="23" id="xvP-xp-BXE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="cIw-vi-cg2" firstAttribute="top" secondItem="5ha-L6-i4X" secondAttribute="top" constant="53" id="3g4-DI-wIh"/>
+                            <constraint firstItem="rx7-dT-RPn" firstAttribute="top" secondItem="5ha-L6-i4X" secondAttribute="top" constant="14" id="5RZ-qW-Cv7"/>
+                            <constraint firstItem="rx7-dT-RPn" firstAttribute="leading" secondItem="5ha-L6-i4X" secondAttribute="leading" constant="24" id="Cek-dV-TpO"/>
+                            <constraint firstAttribute="bottom" secondItem="cIw-vi-cg2" secondAttribute="bottom" constant="282" id="JSd-DC-NlA"/>
+                            <constraint firstItem="cIw-vi-cg2" firstAttribute="leading" secondItem="5ha-L6-i4X" secondAttribute="leading" constant="28" id="ScY-vB-6il"/>
+                            <constraint firstAttribute="trailing" secondItem="cIw-vi-cg2" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="bnP-ir-NhV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Kmn-hm-E7X"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mD6-36-tv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="JAU-wp-K6E">
+                    <connections>
+                        <action selector="handleTaps:" destination="KH0-s5-SQ6" id="cNW-ti-Pb8"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-455" y="-263"/>
+        </scene>
+        <!--GLKit View Controller-->
+        <scene sceneID="KTv-p8-HVn">
+            <objects>
+                <glkViewController autoresizesArchivedViewToFullSize="NO" preferredFramesPerSecond="30" id="J3a-lz-Vb9" customClass="WTPotteryShapeViewViewController" sceneMemberID="viewController">
+                    <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LdV-WE-VM9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outlet property="delegate" destination="J3a-lz-Vb9" id="doq-Rq-Zjy"/>
+                            <outletCollection property="gestureRecognizers" destination="kzj-SN-yrw" appends="YES" id="fT0-0N-Pz4"/>
+                        </connections>
+                    </glkView>
+                </glkViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XHE-U3-aAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="kzj-SN-yrw">
+                    <connections>
+                        <action selector="shape:" destination="J3a-lz-Vb9" id="kr9-yp-aZV"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="61" y="131"/>
+        </scene>
+        <!--Pottery View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="WTPotteryViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3" customClass="GLKView">
+                        <rect key="frame" x="0.0" y="0.0" width="272" height="233"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EYk-nA-uMh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="103" y="-387"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="WTHomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WTHomeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="handleTaps:" candidateClass="UITapGestureRecognizer"/>
+            </relationships>
+        </class>
+        <class className="WTPotteryShapeViewViewController" superclassName="WTPotteryViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WTPotteryShapeViewViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="shape:" candidateClass="UIPanGestureRecognizer"/>
+            </relationships>
+        </class>
+        <class className="WTPotteryViewController" superclassName="GLKViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WTPotteryViewController.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <nil key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
